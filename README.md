@@ -1,2 +1,2 @@
-# Portfolio-for-Katrina-Weis
+# Portfolio for Katrina Weis
 TAMUCT Projects
