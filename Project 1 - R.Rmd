@@ -1,0 +1,77 @@
+---
+title: "Project 1"
+output: html_notebook
+---
+
+I used the Hmisc, pastecs, and plotrix libraries.
+```{r}
+library(Hmisc)
+library(pastecs)
+library(plotrix)
+```
+
+The "stat.desc" function outputs the mean, median, standard deviation, variance, and range.
+
+```{r}
+x<-c(57.2, 66.1, 73.1, 72.3, 69.1, 68.9, 54.5, 65.2, 69.3, 67, 71.2, 73)
+stat.desc(x)
+```
+
+<br>
+
+The "describe" function from Hmisc will tell you how many unique entries you have and how many of each there are.  This is telling you the mode.  
+```{r}
+describe(x)
+```
+As you can see from the table each value has a frequency of 1 so there is no mode in this data set.
+
+<br>
+
+The "quantile" function will give you the 0%, 25%, 50%, 75% and 100% quantiles.  You could also use "fivenum" and get the Q1, median, and Q3.
+```{r}
+quantile(x)
+summary(x)
+```
+
+<br>
+
+The "IQR" function will give you the interquartile range.
+```{r}
+cat("IQR = ", IQR(x))
+```
+
+<br>
+
+You plot the histogram of the data using the "hist" function.
+```{r}
+hist(x, main = "Heights of Males", xlab = "Height", col = "blue")
+```
+
+<br>
+
+You create a box and whisket plot using the "boxplot" function.
+```{r}
+boxplot(x, main = "Height of Males", col = "green", ylab = "Height")
+```
+
+<br>
+
+Creating the "Pie Chart of Countries"
+```{r}
+slices<-c(10, 12, 4, 16, 8)
+lbls<-c("US", "UK", "Australia", "Germany", "France")
+pie(slices, labels = lbls, main = "Pie Chart of Countries")
+```
+
+<br>
+
+Creating the "3D Pie Chart of Countries"
+```{r}
+require(plotrix)
+pie3D(slices, labels = lbls, main = "3D Pie Chart of Countries")
+```
+
+<br>
+
+Thank you for coming and viewing my document on basic R coding.
+Kat Weis
